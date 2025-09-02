@@ -1,0 +1,38 @@
+.navbar-nav .nav-item
+{
+	padding:30px;
+	
+}
+
+.navbar-nav .nav-item:hover
+{
+	background:#ff6600;
+	
+	
+}
+
+.navbar-nav .nav-item a.nav-link:hover
+{
+	color:#ffffff;
+}
+
+
+.callback
+{
+	padding:20px 0px 20px 0px;
+	
+}
+
+.services
+{
+	margin:60px 0px 60px 0px;
+}
+
+.solutions
+{
+	padding:3em 0px 3em 0px;
+	background:url(images/fun-facts-bg.jpg);
+	background-repeat:no-repeat;
+	background-size:cover;
+	
+}

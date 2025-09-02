@@ -1,0 +1,549 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="style.css">
+	
+    <title>Holidays | AN GROUP</title>
+	
+	<style>
+	
+	
+ 
+   .enquiry-form-overlay {
+      position: absolute;
+      top: 50%;
+      right: 5%;
+      transform: translateY(-50%);
+      z-index: 1050;
+      background: #f7f7f7;
+      padding: 40px 25px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      width: 300px;
+    }
+    .carousel {
+      position: relative;
+    }
+	
+	
+	.price-section {
+      padding: 50px 15px;
+      text-align: center;
+	  background-color: #222;
+	  color:#fff;
+    }
+    .price-section h2 {
+      font-size: 2.5rem;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+    .price-section h5 {
+      font-size: 1.2rem;
+      margin-bottom: 40px;
+    }
+    .price-box {
+      border: 1px solid #444;
+      padding: 20px;
+      margin: 0 auto;
+      max-width: 500px;
+      border-radius: 5px;
+      background-color: #222; /* Slightly lighter than the background */
+    }
+    .price-box h4 {
+      font-size: 1rem;
+      color: #bbb;
+      margin-bottom: 5px;
+    }
+    .price-box h3 {
+      font-size: 1.5rem;
+      margin-bottom: 20px;
+    }
+    .price-box .price {
+      font-size: 2rem;
+      font-weight: bold;
+      margin: 20px 0;
+    }
+    .price-box .price small {
+      font-size: 0.9rem;
+    }
+    .interested-btn {
+      background-color: transparent;
+      border: 1px solid #fff;
+      color: #fff;
+      padding: 10px 20px;
+      text-transform: uppercase;
+      font-weight: bold;
+      transition: 0.3s;
+	  width:200px;
+    }
+    .interested-btn:hover {
+      background-color: #f8f9fa;
+      color: #000;
+    }
+	
+.form-container {
+  position: absolute;
+  top: 50%;
+  right: 5%;
+  transform: translateY(-50%);
+  z-index: 9999;
+  width: 300px;
+}
+
+@media (max-width: 768px) {
+  .form-container {
+    position: static; /* Makes the form move to a natural flow */
+    transform: none;
+    margin: 20px auto; /* Centers the form */
+    width: 90%; /* Ensures the form fits within the screen */
+  }
+
+  .carousel {
+    margin-top: 20px; /* Adds spacing below the form */
+  }
+}
+	
+
+#locationmap ul li
+{
+line-height:55px;
+font-size:17px;
+border-bottom:dotted 1px;
+}	
+
+	
+	
+  </style>
+	
+	
+  </head>
+  <body>
+  
+  <div class="modal fade" id="popupFormModal" tabindex="-1" aria-labelledby="popupFormModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="popupFormModalLabel">Enquiry Form</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <!-- Enquiry Form -->
+          <form>
+            <div class="mb-3">
+              <label for="enquiryName" class="form-label">Name</label>
+              <input type="text" class="form-control" id="enquiryName" placeholder="Enter your name" required>
+            </div>
+            <div class="mb-3">
+              <label for="enquiryEmail" class="form-label">Email</label>
+              <input type="email" class="form-control" id="enquiryEmail" placeholder="Enter your email" required>
+            </div>
+            <div class="mb-3">
+              <label for="enquiryPhone" class="form-label">Phone</label>
+              <input type="tel" class="form-control" id="enquiryPhone" placeholder="Enter your phone" required>
+            </div>
+            <button type="submit" class="btn btn-primary w-100">Submit</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  
+  
+  
+  
+  
+  <header>
+   
+<div class="container-fluid p-0">
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="#"><img src="images/sample-logo.jpg" ></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+         <li class="nav-item">
+            <a class="nav-link" href="#overview">Overview</a>
+          </li>
+		  <li class="nav-item">
+            <a class="nav-link" href="#locationmap">Location</a>
+          </li>
+		  <li class="nav-item">
+            <a class="nav-link" href="#gallery">Gallery</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#pricelist">Price List</a>
+          </li>
+		  <li class="nav-item">
+            <a class="nav-link" href="#contactus">Contact Us</a>
+          </li>
+		   
+        </ul>
+		
+		<!-- WhatsApp Icon and Contact Number -->
+      <div class="d-flex align-items-center ms-lg-3">
+        <a href="https://wa.me/1234567890" target="_blank" class="text-success me-2" title="Chat with us on WhatsApp" style="font-size: 1.5rem;">
+          <i class="bi bi-whatsapp"></i>
+        </a>
+        <span class="fw-bold px-3 py-2 rounded" style="background-color: red; color: white;">
+          +91 8928028780
+        </span>
+      </div>
+		
+		
+      </div>
+    </div>
+  </nav>
+
+  <!-- Enquiry Form (Mobile Adjustments Applied) -->
+  <div class="form-container bg-light p-4 shadow rounded">
+    <h4 class="text-center">Enquiry Form</h4>
+    <form>
+      <div class="mb-3">
+        <label for="name" class="form-label">Name</label>
+        <input type="text" class="form-control" id="name" placeholder="Enter your name">
+      </div>
+      <div class="mb-3">
+        <label for="email" class="form-label">Email</label>
+        <input type="email" class="form-control" id="email" placeholder="Enter your email">
+      </div>
+      <div class="mb-3">
+        <label for="phone" class="form-label">Phone</label>
+        <input type="text" class="form-control" id="phone" placeholder="Enter your phone number">
+      </div>
+      <button type="submit" class="btn btn-primary w-100">Submit</button>
+    </form>
+  </div>
+
+  <!-- Banner Section -->
+  <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="images/banner1.jpg" class="d-block w-100" alt="Banner 1">
+        <div class="carousel-caption d-none d-md-block">
+          <h5>First Slide Label</h5>
+          <p>Some placeholder content for the first slide.</p>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img src="images/banner2.jpg" class="d-block w-100" alt="Banner 2">
+        <div class="carousel-caption d-none d-md-block">
+          <h5>Second Slide Label</h5>
+          <p>Some placeholder content for the second slide.</p>
+        </div>
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+</div>
+
+   
+   
+   
+   </header>
+   
+   
+   <section class="callback bg-success">
+   <div class="container">
+   <div class="row">
+   
+   <div class="col-md-8">
+  <p class="fs-4 fw-bold"> Request a call back right now ?</p>
+  <p class="fs-5 fst-italic"> Mauris ut dapibus velit cras interdum nisl ac urna tempor mollis.</p>
+   
+   </div>
+   
+   <div class="col-md-4">
+   
+   <div class="mt-3">
+   <button type="button" class="btn btn-warning btn-lg float-end">Large button</button>
+   
+   </div>
+   
+   </div>
+      
+   </div>
+   
+   
+   </div>
+   
+   
+   </section>
+   
+   
+   <section class="about p-5" id="overview">
+   
+   <div class="container">
+   <div class="row">
+
+   <div class="col-md-5">
+  <img src="images/side-banner.jpg" class="img-fluid rounded" alt="More Info">
+   
+   </div>
+
+   <div class="col-md-7">
+  <h2 class="h1">About Us</h2>
+  <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+
+<p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).</p>
+ 
+<p>Goa's tourism sector continues to flourish, with millions of visitors annually. The government’s business-friendly policies and infrastructure enhancements further position Goa as a global investment hotspot. By choosing Casa De Valle, you align with a future of growth, profitability, and sustainability.</p>
+
+
+<h3 class="h3">Why Choose?</h3>
+<ul>
+<li>Seamless connectivity to airports, highways, beaches, and entertainment zones.</li>
+<li>A perfect combination of luxury and tranquillity, ensuring a fulfilling lifestyle.</li>
+<li>Proximity to iconic destinations like Querim, Arambol, Morjim beaches, as well as vibrant casino zones and the Sunburn Festival.</li>
+<li>A community that fosters exclusivity, security, and luxury.</li>
+</li>
+</ul>
+ 
+   </div>
+   
+
+     
+   </div>
+   
+    
+   </div>
+   
+   </section>
+   
+   
+  <section class="price-section p-5" id="pricelist">
+   <div class="container">
+   <div class="row">
+    <h5>OUR PRICE LIST</h5>
+    <h2>Available Spaces</h2>
+    <p class="mb-4">
+      Our price list reflects this commitment, offering a range of packages designed to align with your preferences.
+    </p>
+    <div class="price-box">
+      <div class="d-flex justify-content-between">
+        <div>
+          <h4>Type</h4>
+          <h3>Plots</h3>
+        </div>
+        <div>
+          <h4>Size</h4>
+          <h3>269 Sq.Yd.</h3>
+        </div>
+      </div>
+      <hr>
+      <h4>Price Start At</h4>
+      <div class="price">
+        ₹ 61.86 LACS* <small>ONWARDS</small>
+      </div>
+	  
+	  <div class="btn">
+	  <button class="interested-btn mt-4" data-bs-toggle="modal" data-bs-target="#popupFormModal" style="cursor: pointer;">INTERESTED</button>
+	  </div>
+	  
+    </div>
+    
+	
+	
+  </div> 
+    </div>
+    </section>
+	
+	
+	
+	
+	 <section class="about p-5" id="locationmap">
+   
+   <div class="container">
+   <div class="row">
+
+   <div class="col-md-6">
+ <h3 class="h3">Perfect Spaces for Residential</h3>
+<ul>
+<li>12 Acres Luxury Gated Township</li>
+<li>World Class Amenities</li>
+<li>8 To 10 % ROI</li>
+<li>Modern Club With Luxury SPA & Private Swimming Pool</li>
+<li>Offering 269 Sq. Yd. Plots</li>
+
+<li>World Class Amenities</li>
+<li>8 To 10 % ROI</li>
+<li>Modern Club With Luxury SPA & Private Swimming Pool</li>
+<li>Offering 269 Sq. Yd. Plots</li>
+
+</ul>
+
+
+   
+   </div>
+
+   <div class="col-md-6">
+  <img src="images/side-banner1.jpg" class="img-fluid rounded" alt="More Info">
+   
+   </div>
+   
+
+     
+   </div>
+   
+    
+   </div>
+   
+   </section>
+   
+   
+      <div class="container py-5" id="gallery">
+    <h2 class="text-center mb-4">Thumbnail Gallery</h2>
+    <div class="row g-3">
+      <!-- Thumbnail 1 -->
+      <div class="col-6 col-md-4 col-lg-3">
+        <div class="card">
+          <img src="images/image-gal1.jpg" class="card-img-top img-thumbnail" alt="Thumbnail 1" data-bs-toggle="modal" data-bs-target="#galleryModal" data-bs-image="images/image-gal1.jpg">
+        </div>
+      </div>
+      <!-- Thumbnail 2 -->
+      <div class="col-6 col-md-4 col-lg-3">
+        <div class="card">
+          <img src="images/image-gal2.jpg" class="card-img-top img-thumbnail" alt="Thumbnail 2" data-bs-toggle="modal" data-bs-target="#galleryModal" data-bs-image="images/image-gal2.jpg">
+        </div>
+      </div>
+      <!-- Thumbnail 3 -->
+      <div class="col-6 col-md-4 col-lg-3">
+        <div class="card">
+          <img src="images/image-gal3.jpg" class="card-img-top img-thumbnail" alt="Thumbnail 3" data-bs-toggle="modal" data-bs-target="#galleryModal" data-bs-image="images/image-gal3.jpg">
+        </div>
+      </div>
+      <!-- Thumbnail 4 -->
+      <div class="col-6 col-md-4 col-lg-3">
+        <div class="card">
+          <img src="images/image-gal4.jpg" class="card-img-top img-thumbnail" alt="Thumbnail 4" data-bs-toggle="modal" data-bs-target="#galleryModal" data-bs-image="images/image-gal4.jpg">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal -->
+  <div class="modal fade" id="galleryModal" tabindex="-1" aria-labelledby="galleryModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="galleryModalLabel">Image Preview</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body text-center">
+          <img src="" id="modalImage" class="img-fluid rounded" alt="Preview">
+        </div>
+      </div>
+    </div>
+  </div>
+   
+    
+   
+  
+   
+   
+   
+    <section class="Contactus p-5 bg-dark" id="contactus">
+   
+   <div class="container">
+   <div class="row">
+<h2 class="text-center text-white">Request a call back</h2>
+<p class="text-center">ETIAM SUSCIPIT ANTE A ODIO CONSEQUAT</p>
+
+<div class="col-md-9 mx-auto bg-info p-5">
+<div class="row">
+<div class="col-md-4 pb-5">
+<input type="text" class="form-control" id="inputPassword" placeholder="Full Name">
+</div>
+
+<div class="col-md-4 pb-5">
+<input type="text" class="form-control" id="inputPassword" placeholder="Email">
+</div>
+ 
+<div class="col-md-4 pb-5">
+<input type="text" class="form-control" id="inputPassword" placeholder="Contact No">
+</div>
+</div>
+
+<div class="row mb-5">
+<div class="col-md-12"><textarea class="form-control" rows="5" aria-label="With textarea" placeholder="Message"></textarea></div>
+</div>
+
+<div class="row">
+<div class="col-md-12 text-center"><input class="btn btn-dark mx-auto" type="submit" value="Submit"></div>
+</div>
+
+</div> 
+
+
+     
+   </div>
+   
+    
+   </div>
+   
+   </section>
+   
+   
+
+
+  <script>
+    // JavaScript to handle modal image display
+    document.addEventListener('DOMContentLoaded', function () {
+      const galleryModal = document.getElementById('galleryModal');
+      const modalImage = document.getElementById('modalImage');
+
+      galleryModal.addEventListener('show.bs.modal', function (event) {
+        const triggerElement = event.relatedTarget; // Button or image that triggered the modal
+        const imageSrc = triggerElement.getAttribute('data-bs-image'); // Get image URL from the data attribute
+        modalImage.setAttribute('src', imageSrc); // Update modal image
+      });
+    });
+  </script>
+   
+   
+   
+   
+   
+   
+   
+   
+   <section class="footer bg-primary text-center p-5">
+   
+   <p class="text-white">Copyright © 2025 Financial Business Co. Pvt.Ltd. - Design by  AN GROUP OF INDUSTRY</p>
+   
+   </section>
+   
+  
+  
+      <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+    -->
+	
+
+	
+	
+  </body>
+</html>
